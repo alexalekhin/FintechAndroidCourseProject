@@ -1,6 +1,7 @@
 package ru.lab.fintechcourseproject
 
 import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
 
 class FintechApplication : Application() {
@@ -13,6 +14,6 @@ class FintechApplication : Application() {
             return
         }
         LeakCanary.install(this)
-        // Normal app init code...
+        AndroidThreeTen.init(this)
     }
 }
