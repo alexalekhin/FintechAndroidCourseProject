@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_rating"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="#FFFFFF"
+    android:paddingBottom="16dp"
+    app:cardBackgroundColor="@color/colorFieldBackground"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:contentPadding="0dp"
+    tools:context=".appearance.mainScreen.coursesTab.rating.RatingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:id="@+id/layout_rating_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_rating_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rating"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_rating_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/details"
+                android:textAlignment="textEnd"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rating_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_rating_header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_rating_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_current_points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="bottom"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_points_postfix"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_points_postfix"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_current_points"
+                    android:layout_alignStart="@+id/tv_current_points"
+                    android:layout_alignEnd="@+id/tv_current_points"
+                    android:layout_marginBottom="32dp"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_current_points"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tv_current_points" />
+
+                <TextView
+                    android:id="@+id/tv_tests"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_current_rating"
+                    android:layout_toEndOf="@+id/tv_current_points"
+                    android:text="@string/ended_tests"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_tests_value"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_tests_value"
+                    app:layout_constraintStart_toStartOf="@+id/tv_current_rating"
+                    app:layout_constraintTop_toTopOf="@+id/tv_tests_value" />
+
+                <TextView
+                    android:id="@+id/tv_hw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tests"
+                    android:layout_toEndOf="@+id/tv_current_points"
+                    android:text="@string/hws_made"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_hw_value"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_hw_value"
+                    app:layout_constraintStart_toStartOf="@+id/tv_current_rating"
+                    app:layout_constraintTop_toTopOf="@+id/tv_hw_value" />
+
+                <TextView
+                    android:id="@+id/tv_current_rating_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tests_value"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_tests_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_hw_value"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_current_rating_value" />
+
+                <TextView
+                    android:id="@+id/tv_hw_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tests_value" />
+
+                <TextView
+                    android:id="@+id/tv_current_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/tv_current_points"
+                    android:text="@string/common_rating"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_current_rating_value"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_current_rating_value"
+                    app:layout_constraintStart_toEndOf="@+id/tv_current_points"
+                    app:layout_constraintTop_toTopOf="@+id/tv_current_rating_value" />
+
+                <TextView
+                    android:id="@+id/tv_lessons_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_hw_value" />
+
+                <TextView
+                    android:id="@+id/tv_all_lessons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/all_lessons"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_lessons_num"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_lessons_num"
+                    app:layout_constraintStart_toStartOf="@+id/tv_current_rating"
+                    app:layout_constraintTop_toTopOf="@+id/tv_lessons_num" />
+
+                <ProgressBar
+                    android:id="@+id/pb_rating"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
