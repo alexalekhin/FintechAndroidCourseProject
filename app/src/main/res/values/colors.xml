@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <!--Base colors-->
+    <color name="colorPrimary">#555555</color>
+    <color name="colorPrimaryDark">#222222</color>
+    <color name="colorAccent">#127386</color>
+    
+    <!--My colors-->
+    <!--Login screen-->
+    <color name="colorLoginBackground">#3E4757</color>
+    <color name="colorLoginAccent">#FFDD2D</color>
+    <!--Text fields-->
+    <color name="colorFieldBackground">#33ffffff</color>
+    <color name="colorFieldText">#ffffff</color>
+
+    <!--Events screen-->
+    <!--Rectangles-->
+    <color name="colorRectangleSoftGreen">#6cd6a2</color>
+    <color name="colorRectangleSoftPurple">#b1a5ee</color>
+    <color name="colorRectangleSoftRed">#f79696</color>
 </resources>

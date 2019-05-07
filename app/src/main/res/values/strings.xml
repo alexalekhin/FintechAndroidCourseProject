@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">Fintech-course-project</string>
+    <string name="app_name">Fintech Portal</string>
+
+    <string name="title_events" translatable="true">Events</string>
+    <string name="title_courses" translatable="true">My courses</string>
+    <string name="title_profile" translatable="true">Profile</string>
+    <string name="rating">Rating</string>
+    <string name="ended_tests">Made tests</string>
+    <string name="details">details</string>
+    <string name="hws_made">Made HWs</string>
+    <string name="all_lessons">All lessons</string>
+    <string name="common_rating">Common rating</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="past">past</string>
+    <string name="all">all</string>
+    <string name="relevant">relevant</string>
+    <string name="performance">Performance</string>
+    <string name="contacts">Contacts</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="education">Education</string>
+    <string name="work">Work</string>
+    <string name="school">School</string>
+    <string name="university">University</string>
+
+    <plurals name="points">
+        <item quantity="zero">%s points</item>
+        <item quantity="one">%s point</item>
+        <item quantity="two">%s points</item>
+        <item quantity="few">%s points</item>
+        <item quantity="many">%s points</item>
+        <item quantity="other">%s points</item>
+    </plurals>
 </resources>

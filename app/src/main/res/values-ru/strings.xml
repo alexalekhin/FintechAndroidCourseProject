@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Финтех портал</string>
+
+    <string name="title_events" translatable="true">События</string>
+    <string name="title_courses" translatable="true">Текущий курс</string>
+    <string name="title_profile" translatable="true">Профиль</string>
+    <string name="rating">Рейтинг</string>
+    <string name="ended_tests">Выполнено тестов</string>
+    <string name="details">Детали</string>
+    <string name="hws_made">Выполнено ДЗ</string>
+    <string name="all_lessons">Всего занятий</string>
+    <string name="common_rating">Общий рейтинг</string>
+    <string name="password">Пароль</string>
+    <string name="login">Логин</string>
+    <string name="past">Прошли</string>
+    <string name="all">Все</string>
+    <string name="relevant">Актуальные</string>
+    <string name="performance">Рейтинг</string>
+    <string name="phone">Телефон</string>
+    <string name="email">Электронная почта</string>
+    <string name="education">Образование</string>
+    <string name="work">Работа</string>
+    <string name="school">Школа</string>
+    <string name="university">Университет</string>
+
+    <plurals name="points">
+        <item quantity="one">%1$s балл</item>
+        <item quantity="few">%1$s балла</item>
+        <item quantity="many">%1$s баллов</item>
+        <item quantity="other">%1$s баллов</item>
+    </plurals>
+</resources>
