@@ -40,9 +40,6 @@ class LoginPresenter @Inject constructor(private val context: Context, private v
         val intent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
-//        val intent = Intent(context, CourseActivity::class.java).apply {
-//            flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//        }
         context.startActivity(intent)
     }
 }

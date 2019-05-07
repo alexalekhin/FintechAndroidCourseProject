@@ -14,8 +14,9 @@ import ru.lab.fintechcourseproject.network.NetworkService
 import ru.lab.fintechcourseproject.network.lectures.HomeworksContainer
 import ru.lab.fintechcourseproject.network.lectures.convertLecture
 import ru.lab.fintechcourseproject.network.lectures.getHomeworksOfLecture
+import javax.inject.Inject
 
-class LecturesModel(
+class LecturesModel @Inject constructor(
     private val fintechService: NetworkService,
     private val database: AppDb,
     private val context: Context

@@ -15,4 +15,3 @@ class DBLecture(
     @NonNull
     val lecTitle: String
 ) : Parcelable
-

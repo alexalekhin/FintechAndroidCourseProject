@@ -53,20 +53,6 @@ class CoursesFragment : SwipeRefreshLayout.OnRefreshListener, Fragment() {
             .replace(R.id.container_rating, RatingFragment.newInstance(), RatingFragment.TAG)
             .commit()
     }
-//
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//        if (context is OnFragmentInteractionListener) {
-//            listener = context
-//        } else {
-//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
-//        }
-//    }
-//
-//    override fun onDetach() {
-//        super.onDetach()
-//        listener = null
-//    }
 
     companion object {
         const val TAG = "CoursesFragment"

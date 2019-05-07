@@ -20,8 +20,6 @@ import ru.lab.fintechcourseproject.network.users.User
 class UserProfileFragment : MvpFragment<IUserProfileView, UserProfilePresenter>(), IUserProfileView {
     private var listener: OnFragmentInteractionListener? = null
 
-
-
     override fun createPresenter(): UserProfilePresenter {
         return UserProfilePresenter(getModel(this.activity!!, ModelType.USER_MODEL) as UserProfileModel)
     }
@@ -75,9 +73,6 @@ class UserProfileFragment : MvpFragment<IUserProfileView, UserProfilePresenter>(
                     RetrofitNetworkClient.BASE_URL.length - 1
                 ) + user.avatarUrl
             )
-//            .resize(iv_avatar.width, iv_avatar.height)
-//            .centerCrop()
-//            .fit()
             .into(iv_avatar)
     }
 

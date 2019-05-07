@@ -15,8 +15,9 @@ import ru.lab.fintechcourseproject.network.NetworkService
 import ru.lab.fintechcourseproject.network.students.StudentsContainer
 import ru.lab.fintechcourseproject.network.students.convertToDatabaseStudent
 import java.util.*
+import javax.inject.Inject
 
-class PerformanceModel(
+class PerformanceModel @Inject constructor(
     private val fintechService: NetworkService,
     private val database: AppDb,
     context: Context

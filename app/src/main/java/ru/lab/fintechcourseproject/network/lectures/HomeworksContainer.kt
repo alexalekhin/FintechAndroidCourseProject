@@ -1,6 +1,5 @@
 package ru.lab.fintechcourseproject.network.lectures
 
-
 import com.google.gson.annotations.SerializedName
 import ru.lab.fintechcourseproject.database.homeworks.DBHomework
 import ru.lab.fintechcourseproject.database.lectures.DBLecture

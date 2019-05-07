@@ -15,9 +15,10 @@ import ru.lab.fintechcourseproject.network.lectures.HomeworksContainer
 import ru.lab.fintechcourseproject.network.lectures.convertLecture
 import ru.lab.fintechcourseproject.network.lectures.getHomeworksOfLecture
 import ru.lab.fintechcourseproject.network.students.StudentsContainer
+import javax.inject.Inject
 import kotlin.math.round
 
-class RatingModel(
+class RatingModel @Inject constructor(
     private val fintechService: NetworkService,
     private val database: AppDb,
     private val context: Context

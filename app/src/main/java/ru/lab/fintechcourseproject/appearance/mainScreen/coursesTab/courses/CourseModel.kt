@@ -48,7 +48,6 @@ class CourseModel @Inject constructor(
     }
 
     private fun updateCourses() {
-        //todo update DB data
         fintechService.getCourses(getCookieFromMemory())
             .enqueue(object : Callback<CoursesContainer> {
                 override fun onFailure(call: Call<CoursesContainer>, t: Throwable) {

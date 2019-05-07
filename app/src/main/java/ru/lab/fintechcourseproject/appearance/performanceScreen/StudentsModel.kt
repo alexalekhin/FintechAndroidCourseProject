@@ -17,7 +17,7 @@ import ru.lab.fintechcourseproject.network.students.convertToDatabaseStudent
 import java.util.*
 import javax.inject.Inject
 
-class StudentsModel(
+class StudentsModel @Inject constructor(
     private val fintechService: NetworkService,
     private val database: AppDb,
     context: Context

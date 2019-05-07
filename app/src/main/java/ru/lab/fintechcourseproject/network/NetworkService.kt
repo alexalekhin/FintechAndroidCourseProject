@@ -31,7 +31,6 @@ interface NetworkService {
     @GET("api/calendar/list/event")
     fun getEvents(): Call<EventsContainer>
 
-    @GET("api/course/android_spring_2019/about")
-    fun getCourseAbout(@Header("Cookie") cookie: String/*, @Path("course_id") course_id: String*/ ): Call<CourseAbout>
-
+    @GET("api/course/{course_id}/about")
+    fun getCourseAbout(@Header("Cookie") cookie: String, @Path("course_id") courseId: String ): Call<CourseAbout>
 }

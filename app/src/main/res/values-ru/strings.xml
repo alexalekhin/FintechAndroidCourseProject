@@ -2,7 +2,7 @@
     <string name="app_name">Финтех портал</string>
 
     <string name="title_events" translatable="true">События</string>
-    <string name="title_courses" translatable="true">Текущий курс</string>
+    <string name="title_courses" translatable="true">Мои курсы</string>
     <string name="title_profile" translatable="true">Профиль</string>
     <string name="rating">Рейтинг</string>
     <string name="ended_tests">Выполнено тестов</string>

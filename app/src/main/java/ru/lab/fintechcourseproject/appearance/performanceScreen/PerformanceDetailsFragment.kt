@@ -44,10 +44,6 @@ class PerformanceDetailsFragment : MvpFragment<IStudentsView, StudentsPresenter>
         progressBar = view.findViewById(R.id.pb_students)
         recyclerView = view.findViewById(R.id.rv_contacts_container)
         recyclerView.layoutManager = LinearLayoutManager(this.activity)
-//        val decoration =
-//            CustomSeparatorItemDecoration(this.activity!!, CustomSeparatorItemDecoration.DividerType.VERTICAL)
-//        recyclerView.itemAnimator = CustomRecyclerViewAnimator()
-//        recyclerView.addItemDecoration(decoration)
         return view
     }
 

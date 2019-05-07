@@ -79,6 +79,8 @@ class FlowFragment : Fragment() {
         viewPager.adapter = adapter
         viewPager.offscreenPageLimit = MAX_PAGES_LOADED
         this.statePagerAdapter = adapter
+        viewPager.currentItem = 1 //Мои курсы
+
     }
 
     override fun onAttach(context: Context) {

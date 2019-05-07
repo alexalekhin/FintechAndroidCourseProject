@@ -11,8 +11,9 @@ import ru.lab.fintechcourseproject.database.user.UserRepository
 import ru.lab.fintechcourseproject.network.NetworkService
 import ru.lab.fintechcourseproject.network.users.Profile
 import ru.lab.fintechcourseproject.network.users.User
+import javax.inject.Inject
 
-class UserProfileModel(
+class UserProfileModel @Inject constructor(
     private val fintechService: NetworkService,
     private val context: Context
 ) : Model {

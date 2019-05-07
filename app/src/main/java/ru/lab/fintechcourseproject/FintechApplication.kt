@@ -14,6 +14,7 @@ import ru.lab.fintechcourseproject.appearance.performanceScreen.StudentsModel
 import ru.lab.fintechcourseproject.database.AppDb
 import ru.lab.fintechcourseproject.di.ContextModule
 import ru.lab.fintechcourseproject.di.DaggerApplicationComponent
+import ru.lab.fintechcourseproject.di.DataBaseModule
 import ru.lab.fintechcourseproject.di.NetworkModule
 import ru.lab.fintechcourseproject.network.NetworkService
 import ru.lab.fintechcourseproject.network.RetrofitNetworkClient
@@ -25,6 +26,7 @@ class FintechApplication : Application() {
     lateinit var fintechService: NetworkService
     @Inject
     lateinit var appDb: AppDb
+    @Inject
     lateinit var loginModel: LoginModel
     @Inject
     lateinit var userProfileModel: UserProfileModel
@@ -34,22 +36,22 @@ class FintechApplication : Application() {
     lateinit var studentsModel: StudentsModel
     @Inject
     lateinit var eventsModel: EventsModel
+    @Inject
     lateinit var courseModel: CourseModel
+    @Inject
     lateinit var performanceModel: PerformanceModel
+    @Inject
     lateinit var ratingModel: RatingModel
 
     override fun onCreate() {
         super.onCreate()
-        fintechService = RetrofitNetworkClient.newNetworkService()
-        appDb = DaggerApplicationComponent.builder().contextModule(ContextModule(this)).networkModule(NetworkModule(RetrofitNetworkClient)).build().getDatabase()
-        loginModel = LoginModel(fintechService)
-        userProfileModel = UserProfileModel(RetrofitNetworkClient.newNetworkService(), this)
-        lecturesModel = LecturesModel(RetrofitNetworkClient.newNetworkService(), appDb, this)
-        studentsModel = StudentsModel(RetrofitNetworkClient.newNetworkService(), appDb, this)
-        eventsModel = EventsModel(fintechService, appDb)
-        courseModel = CourseModel(fintechService, appDb, this)
-        performanceModel = PerformanceModel(fintechService, appDb, this)
-        ratingModel = RatingModel(fintechService, appDb, this)
+
+        DaggerApplicationComponent
+            .builder()
+            .networkModule(NetworkModule(RetrofitNetworkClient))
+            .contextModule(ContextModule(this))
+            .dataBaseModule(DataBaseModule())
+            .build().inject(this)
         AndroidThreeTen.init(this)
     }
 }

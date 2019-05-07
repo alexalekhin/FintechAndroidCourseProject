@@ -58,8 +58,6 @@ class InitialsRoundView : FrameLayout {
         _initials = a.getString(R.styleable.InitialsRoundView_initials) ?: _initials
 
         circle = CircleView(context).apply {
-            //circleColor = _roundColor
-//            circleColor = (Random.nextInt(COLOR_VALUE_RANGE)).xor(Color.LTGRAY)
             (layoutParams as FrameLayout.LayoutParams?)?.apply {
                 width = ViewGroup.LayoutParams.MATCH_PARENT
                 height = ViewGroup.LayoutParams.MATCH_PARENT
@@ -97,7 +95,6 @@ class InitialsRoundView : FrameLayout {
     }
 
     companion object {
-        private val COLOR_VALUE_RANGE: IntRange = 0..0xffffff
         private const val STD_TEXT_SIZE: Float = 16.0f
         private const val MIN_TEXT_SIZE: Int = 16
         private const val MAX_TEXT_SIZE: Int = 36
