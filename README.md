@@ -27,6 +27,7 @@ _Clone or download source files_
 - Dagger
 - Mosby3 for MVP
 - Leak Canary
+
 BUT NO:
 - RxJava2
 - __Any other libs that could expand functionality__
