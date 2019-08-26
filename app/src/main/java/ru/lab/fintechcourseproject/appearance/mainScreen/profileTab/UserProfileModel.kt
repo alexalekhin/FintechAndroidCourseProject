@@ -40,10 +40,12 @@ class UserProfileModel @Inject constructor(
                 }
 
                 override fun onResponse(call: Call<Profile>, response: Response<Profile>) {
-                    if (response.isSuccessful) {
-                        userRepository.saveUserToMemory(response.body()!!.user)
-                        mutableUser.value = response.body()!!.user
-                        mutableProfileState.value = ProfileState.LOADED_FROM_NETWORK
+                    response.body()!!.user.let {
+                        if (response.isSuccessful) {
+                            userRepository.saveUserToMemory(response.body()!!.user)
+                            mutableUser.value = response.body()!!.user
+                            mutableProfileState.value = ProfileState.LOADED_FROM_NETWORK
+                        }
                     }
                 }
             })

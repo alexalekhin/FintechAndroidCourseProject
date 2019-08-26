@@ -10,20 +10,24 @@ class PerformancePresenter(private val model: PerformanceModel) : MvpBasePresent
             ifViewAttached { view ->
                 when (it) {
                     PerformanceModel.State.LOADED_FROM_NETWORK -> view.onResult(
-                        model.students.value!!.subList(
-                            LIST_BEGINNING,
-                            LIST_ENDING
-                        )
+                        //TODO: remove hot fix
+                        emptyList()
+
+//                        model.students.value!!.subList(
+//                            LIST_BEGINNING,
+//                            LIST_ENDING
+//                        )
                     )
                     PerformanceModel.State.LOADED_FROM_MEM -> view.onResult(
-                        model.students.value!!.subList(
-                            LIST_BEGINNING,
-                            LIST_ENDING
-                        )
+                        emptyList()
+//                        model.students.value!!.subList(
+//                            LIST_BEGINNING,
+//                            LIST_ENDING
+//                        )
                     )
                     PerformanceModel.State.IN_PROCESS -> view.onLoadingProgress()
                     PerformanceModel.State.NOT_LOADED -> view.onFailure()
-                    else -> TODO()
+                    else -> view.onResult(emptyList())
                 }
             }
         }

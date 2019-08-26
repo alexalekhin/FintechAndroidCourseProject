@@ -54,13 +54,17 @@ class PerformanceModel @Inject constructor(
                     call: Call<ArrayList<StudentsContainer>>,
                     response: Response<ArrayList<StudentsContainer>>
                 ) {
-                    val studentsContainer: StudentsContainer = response.body()!![1]
-                    for (student in studentsContainer.students) {
-                        newStudents.add(convertToDatabaseStudent(student))
+                    response.body()?.let {
+                        val studentsContainer: StudentsContainer = response.body()!![1]
+                        for (student in studentsContainer.students) {
+                            newStudents.add(convertToDatabaseStudent(student))
+                        }
+                        mutableStudents.value = newStudents.sortedByDescending { it.points }
+                        newStudents.forEach {
+                            database.getStudentDao().insert(it)
+                        }//todo: move to backing thread
+                        mutableState.value = State.LOADED_FROM_NETWORK
                     }
-                    mutableStudents.value = newStudents.sortedByDescending { it.points }
-                    newStudents.forEach { database.getStudentDao().insert(it) }//todo: move to backing thread
-                    mutableState.value = State.LOADED_FROM_NETWORK
                 }
 
                 override fun onFailure(call: Call<ArrayList<StudentsContainer>>, t: Throwable) {

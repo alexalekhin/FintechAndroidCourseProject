@@ -3,7 +3,6 @@ package ru.lab.fintechcourseproject.database.user
 import android.content.SharedPreferences
 import ru.lab.fintechcourseproject.network.users.User
 
-
 class UserRepository(private val prefs: SharedPreferences) {
     fun loadUserFromMemory(): User {
         return User(
@@ -17,28 +16,31 @@ class UserRepository(private val prefs: SharedPreferences) {
             prefs.getString("tShirtSize", STD_STRING),
             prefs.getBoolean("isClient", STD_BOOLEAN),
             prefs.getString("skype", STD_STRING),
-            prefs.getString("description",
+            prefs.getString(
+                "description",
                 STD_STRING
             ),
             prefs.getString("region", STD_STRING),
             prefs.getString("school", STD_STRING),
             prefs.getLong("schoolGradYear", STD_LONG),
             prefs.getString("university", STD_STRING),
-            prefs.getLong("universityGradYear",
+            prefs.getLong(
+                "universityGradYear",
                 STD_LONG
             ),
             prefs.getString("faculty", STD_STRING),
             prefs.getString("grade", STD_STRING),
             prefs.getString("department", STD_STRING),
-            prefs.getString("currentWork",
+            prefs.getString(
+                "currentWork",
                 STD_STRING
             ),
             prefs.getString("resume", STD_STRING)
         )
-
     }
 
     fun saveUserToMemory(user: User) {
+        //TODO: remove hot fix
         with(prefs.edit()) {
             putString("lastName", user.lastName)
             putString("firstName", user.firstName)
