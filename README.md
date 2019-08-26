@@ -1,17 +1,11 @@
 # Tinkoff Fintech Portal (Course project)
 
-Basic Android application for access to Tinkoff Fintech Portal Account via your smartphone.
+Simple Android application for access to Tinkoff Fintech Portal Account via your smartphone.
 
-`Не рекомендуется к установке и использованию из-за битых ресурсов внутри и проблем с апи`
+`Не рекомендуется к установке и использованию из-за проблем с изменившимся Api`
 
-## Features
-_No special features at the moment_
-
-### Screenshots
-_Nothing in here at the moment_
-
-### Demonstration
-_Nothing in here at the moment_
+## Description
+Simple Android application to access your Tinkoff Fintech Portal Account from your smartphone and watch performance of yourself and your classmates
 
 ## Requirements
 __Api >=23__
