@@ -2,7 +2,7 @@
 
 Simple Android application for access to Tinkoff Fintech Portal Account via your smartphone.
 
-`Не рекомендуется к установке и использованию из-за проблем с Api`
+`Не рекомендуется к установке и использованию из-за проблем с изменившимся Api`
 
 ## Description
 Simple Android application to access your Tinkoff Fintech Portal Account from your smartphone and watch performance of yourself and your classmates
