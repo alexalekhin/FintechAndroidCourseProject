@@ -9,6 +9,7 @@ import retrofit2.Response
 import ru.lab.fintechcourseproject.Model
 import ru.lab.fintechcourseproject.network.LoginInfo
 import ru.lab.fintechcourseproject.network.NetworkService
+import ru.lab.fintechcourseproject.network.users.User
 import javax.inject.Inject
 
 class LoginModel @Inject constructor(private val fintechService: NetworkService): Model {
@@ -30,13 +31,13 @@ class LoginModel @Inject constructor(private val fintechService: NetworkService)
         if (emailRegex.matches(email) && passwordRegex.matches(password)) {
             mutableLoginState.value = LoginState.IN_PROCESS
             fintechService.authorize(LoginInfo(email, password))
-                .enqueue(object : Callback<Any> {
-                    override fun onFailure(call: Call<Any>, t: Throwable) {
+                .enqueue(object : Callback<User> {
+                    override fun onFailure(call: Call<User>, t: Throwable) {
                         mutableLoginState.value = LoginState.FAILURE
                         mutableCookie.value = null
                     }
 
-                    override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                    override fun onResponse(call: Call<User>, response: Response<User>) {
                         if (response.isSuccessful) {
                             mutableCookie.value = response.headers()
                                 .get("Set-Cookie")

@@ -8,13 +8,14 @@ import ru.lab.fintechcourseproject.network.events.EventsContainer
 import ru.lab.fintechcourseproject.network.lectures.HomeworksContainer
 import ru.lab.fintechcourseproject.network.students.StudentsContainer
 import ru.lab.fintechcourseproject.network.users.Profile
+import ru.lab.fintechcourseproject.network.users.User
 
 interface NetworkService {
     @Headers(
         "Content-Type: application/json"
     )
     @POST("api/login")
-    fun authorize(@Body signingInfo: LoginInfo): Call<Any>
+    fun authorize(@Body signingInfo: LoginInfo): Call<User>
 
     @GET("api/user")
     fun getProfile(@Header("Cookie") cookie: String): Call<Profile>
